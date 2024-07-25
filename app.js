@@ -10,7 +10,6 @@ app.set("view engine", 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-// handling the io function in script.js
 io.on('connection', function (socket) {
     console.log("A user connected:", socket.id);
     socket.on("send-location", function (data) {
@@ -29,5 +28,3 @@ app.get('/', (req, res) => {
 server.listen(3000, () => {
     console.log("Server running on port 3000");
 });
-
-
